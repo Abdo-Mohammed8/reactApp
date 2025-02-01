@@ -1,0 +1,162 @@
+@use "./parFiles/Base" as *;
+@use "./parFiles/sideBar" as *;
+
+body{
+
+    background-color: $main-bg-color;
+    font-family: $body-font-family;
+}
+
+
+// .cat-btu{
+
+//     display: inline-block;
+
+// }
+
+.cat-group{
+    
+    ul{
+        .active{
+            background-color: black;
+            color: white;
+        }
+    }
+
+}
+
+.meal{
+ 
+    background-color: white;
+    @extend %flex-c;
+    gap:15px;
+    border-radius: 40px;
+    transition: all 0.5s;
+    
+    h2{
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    p{
+        font-size: 22px;
+        color:$btn-meal-color;
+        i{
+            margin-right: 10px;
+            font-size: 16px;
+        }
+    }
+    a{
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 10px 20px;
+        width: 70%;
+        max-width: 160px;
+        cursor: pointer;
+      
+       margin-bottom: 20px;
+       background-color:$btn-meal-color ;
+       color: white;
+       border-radius: 40px;
+       transition: all 0.3s;
+    }
+    a:hover{
+        background-color: $btn-h-meal-color;
+    }
+    .meal-img{
+        transform: translateY(-40px);
+        width: 60%;
+        border-radius: 50%;
+        overflow: hidden;
+        -webkit-box-shadow: 10px 27px 98px -30px rgba(0,0,0,0.67);
+        -moz-box-shadow: 10px 27px 98px -30px rgba(0,0,0,0.67);
+        box-shadow: 10px 27px 98px -30px rgba(0,0,0,0.67);
+        transition: all .5s;
+        
+        img{
+            width: 100%;
+            transform: rotate(0);
+            transition: all .5s;
+            
+        }
+    }
+    
+   
+}
+
+.meal:hover{
+    transform: scale(1.08);
+    
+    
+}
+.meal:hover img{
+    transform: rotate(360deg);
+}
+
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    border: 3px solid;
+    border-color: #FFF #FFF transparent transparent;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+  .loader::after,
+  .loader::before {
+
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px solid;
+    border-color: transparent transparent #FF3D00 #FF3D00;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    animation: rotationBack 0.5s linear infinite;
+    transform-origin: center center;
+  }
+  .loader::before {
+    width: 32px;
+    height: 32px;
+    border-color: #FFF #FFF transparent transparent;
+    animation: rotation 1.5s linear infinite;
+  }
+      
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+  @keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+
+  .main-header{
+
+    font-size:40px;
+    color:transparent; 
+    background-image: linear-gradient(to right,  #f8aa4a , #ff0019c4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-family: $header-font-family;
+  }

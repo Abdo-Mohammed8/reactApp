@@ -1,0 +1,11 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+
+    .btn {
+        @apply  inline-block px-4 py-2  border-gray-400 border transition-all hover:shadow-xl shadow duration-300  rounded-full hover:text-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 dark:hover:text-gray-300 ;
+    }
+}
