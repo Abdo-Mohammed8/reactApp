@@ -1,13 +1,7 @@
 
-import { NavLink, Outlet, useNavigate } from 'react-router-dom';
-import All from './Categorys/All';
-import { useEffect, useState } from 'react';
-
+import { NavLink, useNavigate } from 'react-router-dom';
 
 export default function Categorylist() {
-
-  let [select,setSelect]=useState('');
-
 
   let navigate = useNavigate();
   
