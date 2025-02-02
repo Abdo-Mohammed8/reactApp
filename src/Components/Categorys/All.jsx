@@ -2,10 +2,10 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Meals from '../Meals'
 import Loading from '../Loading';
-import Categorynames from '../Categorynames';
 
 export default function All() {
-    let [arry,setArry] = useState([])
+    let [arry,setArry] = useState([]);
+    let [error,setError] = useState('');
    
     async function  getaAllMeals(){
 
@@ -17,7 +17,9 @@ export default function All() {
           setArry(data.meals)
           
       }
-      catch(err){ console.log(err)}
+      catch(error){
+        setError(error.message)
+      }
      
       }
       useEffect(() => {
@@ -26,14 +28,7 @@ export default function All() {
       
   return (
     <>
-    
-    <Categorynames/>
-    <div className='container py-8 px-3'>
-    <div className='grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-x-10 gap-y-28 '>
-    {arry.length?arry.map(ele=><Meals key={ele.idMeal} idMeal={ele.idMeal}  strMeal={ele.strMeal} strArea={ele.strArea} img={ele.strMealThumb}></Meals>):<Loading></Loading>}
-    </div>
-    </div>
-    
+   {error==''? <>{arry.length?arry.map(ele=><Meals key={ele.idMeal} idMeal={ele.idMeal}  strMeal={ele.strMeal} strArea={ele.strArea} img={ele.strMealThumb}></Meals>):<Loading></Loading>}</>:<Loading error={error}></Loading>}
     </>
 
   )

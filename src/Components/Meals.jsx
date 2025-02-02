@@ -24,7 +24,7 @@ export default function Meals(props) {
         </div>
         <h2>{props.strMeal.split(' ').slice(0, 2).join(' ')}</h2>
         <p className={props.strArea ? '':'hidden'}><i className="fa-solid fa-earth-americas"></i> {props.strArea}</p>
-        <Link to={'/Recips'} state={props.idMeal}>View Recips</Link>
+        <Link to={'/mealdetails'} state={props.idMeal}>View Recips</Link>
       </div>
     
     

@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Loading from './Loading';
 
-export default function Recips() {
+export default function Mealdetails() {
     let {state}= useLocation();
     
     let [arry,setArry] = useState([]);

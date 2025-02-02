@@ -1,7 +1,6 @@
 
 import './css/App.css';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Layout from './Components/Layout';
 import All from './Components/Categorys/All';
 import Beef from './Components/Categorys/Beef';
 import Breakfast from './Components/Categorys/Breakfast';
@@ -17,32 +16,39 @@ import Side from './Components/Categorys/Side';
 import Vegan from './Components/Categorys/Vegan';
 import Vegetarian from './Components/Categorys/Vegetarian';
 import Starter from './Components/Categorys/Starter';
-import Recips from './Components/Recips';
 import Notfound from './Components/Notfound';
+import Mainlayout from './Components/Mainlayout';
+import Categorylayout from './Components/Categorylayout';
+import Mealdetails from './Components/Mealdetails';
 
 
 
 function App() {
 
   const router = createBrowserRouter([{
-   path:'/' ,element : <Layout></Layout>,children:[
-      {index:true, element : <All></All>},
-      {path:'/Beef', element:<Beef></Beef>},
-      {path:'/Breakfast' , element:<Breakfast/>},
-      {path:'/Chicken' , element:<Chicken/>},
-      {path:'/Dessert' , element:<Dessert/>},
-      {path:'/Goat' , element:<Goat/>},
-      {path:'/Lamb' , element:<Lamb/>},
-      {path:'/Miscellaneous' , element:<Miscellaneous/>},
-      {path:'/Pasta' , element:<Pasta/>},
-      {path:'/Pork' , element:<Pork/>},
-      {path:'/Seafood' , element:<Seafood/>},
-      {path:'/Side' , element:<Side/>},
-      {path:'/Starter' , element:<Starter/>},
-      {path:'/Vegan' , element:<Vegan/>},
-      {path:'/Vegetarian' , element:<Vegetarian/>},
-      {path:'/Recips' , element:<Recips/>},
-      {path:'*' , element:<Notfound/>},
+   path:'/' ,element : <Mainlayout/>,children:[
+    {path:'/',element:<Categorylayout/> ,children:[
+      {index:true,element:<All></All>},
+      {path:'category/beef', element:<Beef></Beef>},
+      {path:'category/breakfast' , element:<Breakfast/>},
+      {path:'category/chicken' , element:<Chicken/>},
+      {path:'category/dessert' , element:<Dessert/>},
+      {path:'category/goat' , element:<Goat/>},
+      {path:'category/lamb' , element:<Lamb/>},
+      {path:'category/miscellaneous' , element:<Miscellaneous/>},
+      {path:'category/pasta' , element:<Pasta/>},
+      {path:'category/pork' , element:<Pork/>},
+      {path:'category/seafood' , element:<Seafood/>},
+      {path:'category/side' , element:<Side/>},
+      {path:'category/starter' , element:<Starter/>},
+      {path:'category/vegan' , element:<Vegan/>},
+      {path:'category/vegetarian' , element:<Vegetarian/>},
+    ]},
+      
+    {path:'mealdetails' , element:<Mealdetails/>},
+    {path:'*' , element:<Notfound/>},
+    ,
+      
     ] 
   }
 
